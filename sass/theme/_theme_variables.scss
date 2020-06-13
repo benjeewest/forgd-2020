@@ -1,0 +1,24 @@
+// Use this file to overwrite the basic Bootstrap variables and add your own variables
+// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
+// Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
+
+$spacer: 1.5rem;
+$font-size-base: 1.125rem;  
+
+$enable-rounded: false;
+$enable-shadows: true;
+$enable-responsive-font-sizes: true;
+
+$font-family-sans-serif:'Lato',serif;
+$headings-font-family: 'Frank Ruhl Libre', serif;
+$headings-font-weight: 700;
+$headings-margin-bottom:      $spacer / 4;
+
+$line-height-base:            1.75;
+
+$paragraph-margin-bottom:   $spacer;
+
+$red: #C10F6A;
+
+$primary: $red;
+$link-decoration:                         underline;

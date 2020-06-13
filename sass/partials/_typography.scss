@@ -1,0 +1,11 @@
+.entry-content {
+	ul {
+		li {
+			margin-bottom: $spacer / 2;
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+}
