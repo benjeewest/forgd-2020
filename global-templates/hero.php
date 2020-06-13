@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 <div class="jumbotron bg-primary text-white">
 	<div class="container">
 		<h1 class="display-4">Lorem ipsum delor set amet</h1>
-		<p class="lead">dsdssdsds for anyone who believes in a L</p>
+		<p class="lead">TEST TEST TESTdsdssdsds for anyone who believes in a L</p>
 		<hr class="my-4">
 		<p>rtrtrtrtrtrtdffggfghghhjhjhhj
 		</p>
