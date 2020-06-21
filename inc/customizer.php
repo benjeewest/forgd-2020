@@ -35,6 +35,24 @@ if ( ! function_exists( 'understrap_theme_customize_register' ) ) {
 	 */
 	function understrap_theme_customize_register( $wp_customize ) {
 
+		// Show tagline
+		$wp_customize->add_setting('understrap_show_tagline', array(
+    		'default'    => true
+		));
+
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'understrap_show_tagline',
+				array(
+					'label'     => __('Show Tagline in Header', 'understrap'),
+					'section'   => 'title_tagline',
+					'settings'  => 'understrap_show_tagline',
+					'type'      => 'checkbox',
+				)
+			)
+		);
+		
 		// Theme layout settings.
 		$wp_customize->add_section(
 			'understrap_theme_layout_options',
@@ -151,3 +169,10 @@ if ( ! function_exists( 'understrap_customize_preview_js' ) ) {
 	}
 }
 add_action( 'customize_preview_init', 'understrap_customize_preview_js' );
+
+/** Show tagline option **/
+function the_tagline() {
+		if(get_theme_mod( 'understrap_show_tagline' ) == true){?>
+<div class="brand-tagline" rel="home"><?php bloginfo( 'description' ); ?></div><?php
+		}
+	};	

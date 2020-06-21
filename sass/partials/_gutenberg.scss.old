@@ -1,0 +1,136 @@
+/* Standard WP Images */
+
+.wp-caption {
+	
+}
+/* Blockquote
+--------------------------------------------- */
+
+blockquote,
+blockquote.wp-block-quote {
+	background: transparent;
+	text-align: left;
+
+	p {
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 400;
+	}
+
+	cite,
+	.wp-block-quote__citation {
+		display: block;
+		font-size: 16px;
+		font-weight: 700;
+		margin-top: 12px;
+		text-transform: uppercase;
+	}
+
+	p:last-of-type {
+		margin-bottom: 0;
+	}
+
+	&.is-large,
+	&.is-style-large {
+		margin: calc(2 * $spacer) auto;
+
+		p {
+			// @include font-sizes(24px, 36px);
+		}
+	}
+
+}
+
+/* Pull Quote
+--------------------------------------------- */
+
+.wp-block-pullquote {
+	border: none;
+	padding: 0;
+
+	blockquote {
+		border-left: 0;
+		border-top: 8px solid $primary;
+		border-bottom: 8px solid $primary;
+		padding: 16px 0;
+		text-align: center;
+		max-width: 50%;
+		margin: 0 auto;
+	}
+
+	&.alignleft,
+	&.alignright {
+
+		blockquote {
+			max-width: 100%;
+		}
+	}
+}
+
+/* Separator
+--------------------------------------------- */
+
+.wp-block-separator,
+hr {
+
+	&:not(.is-style-dots) {
+		//background-color: $border-color;
+		border: 0;
+		height: 1px;
+	}
+
+	&:not(.is-style-wide):not(.is-style-dots) {
+		width: 100%;
+		height: 4px;
+		background: transparent;
+
+		&::before {
+			content: '';
+			display: block;
+			height: 4px;
+			width: 40px;
+			//background: $highlight;
+		}
+	}
+
+	&.is-style-dots:before {
+		//color: $grey_9;
+		font-size: 18px;
+		letter-spacing: 12px;
+		padding-left: 12px;
+	}
+}
+
+/* Gutenberg wide images
+----------------------------------------------------*/
+.entry-content .alignwide {
+	margin-left: -80px;
+	margin-right: -80px;
+}
+
+.entry-content .alignfull {
+	margin-left: calc(-100vw / 2 + 100% / 2);
+	margin-right: calc(-100vw / 2 + 100% / 2);
+	max-width: 100vw;
+}
+
+.alignfull img {
+	width: 100vw;
+}
+
+/* Button
+--------------------------------------------- */
+.wp-block-buttons {
+	@include mb($paragraph-margin-bottom);
+
+	.wp-block-button {
+		@include mb(0);
+		@include mx(0);
+
+		.wp-block-button__link {
+			@extend .btn;
+
+		}
+
+	}
+}

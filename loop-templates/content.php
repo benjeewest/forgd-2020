@@ -15,16 +15,16 @@ defined( 'ABSPATH' ) || exit;
 
 		<?php
 		the_title(
-			sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
+			sprintf( '<h2 class="entry-title balance-text"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
 			'</a></h2>'
 		);
 		?>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 
-			<div class="entry-meta">
-				<?php understrap_posted_on(); ?>
-			</div><!-- .entry-meta -->
+		<div class="entry-meta">
+			<?php understrap_posted_on(); ?>
+		</div><!-- .entry-meta -->
 
 		<?php endif; ?>
 

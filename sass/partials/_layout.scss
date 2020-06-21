@@ -1,0 +1,146 @@
+//Body width
+body:not(.page-template-fullwidthpage) {
+	.entry-content {
+		max-width: 580px;
+	}
+}
+
+
+//Headroom
+.site-header {
+	@extend .navbar;
+	@include transition(all 1s);
+	border-bottom: 1px solid rgba($white, 0.3);
+	@extend .navbar-dark;
+	background-color: $secondary;
+	z-index: $zindex-fixed;
+
+	.brand-tagline {
+		@extend .navbar-text;
+		color: $white;
+		@include mr(auto);
+		@include my(auto);
+		font-style: italic;
+		@include pb(0);
+	}
+
+	&.top {
+		width: 100%;
+
+	}
+
+	&.slideUp.not-top {
+		@extend .fixed-top;
+		@extend .bg-dark;
+
+	}
+
+	.navbar-toggler {
+		&:focus {
+			.navbar-toggler-icon {
+				background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#{$navbar-light-color}' stroke-linecap='square' stroke-miterlimit='10' stroke-width='4' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+			}
+
+			outline: none;
+		}
+	}
+}
+
+//////////////////////////////////////
+// Off Canvas / Drop Down Menu
+//////////////////////////////////////
+
+#main-menu {
+	li.active a {
+		border-bottom: 2px solid $midnight;
+	}
+
+	li {
+		@include font-size(2rem);
+		font-weight: 200;
+
+		a {
+			color: #fff;
+			padding-top: ($spacer/3);
+			padding-bottom: ($spacer/3);
+		}
+	}
+}
+
+
+#ModalNav .modal-content {
+	background-color: theme-color("dark");
+	padding: 8vh;
+
+	.close {
+		text-shadow: none;
+		position: absolute;
+		top: -6vh;
+		right: -6vh;
+		opacity: 1;
+		padding: 0 10px;
+		@include font-size(3rem);
+		font-weight: lighter;
+		color: rgba($white, 0.8);
+
+		&:focus {
+			outline: none;
+		}
+
+		&:hover {
+			color: $white;
+		}
+	}
+
+	.dropdown-menu {
+		float: left;
+		border: none;
+		padding: 1vh 1vw;
+		text-align: left;
+		width: 100%;
+		position: relative;
+		top: 0%;
+	}
+
+	#main-menu .dropdown-menu li {
+		font-size: 1.25em;
+
+		a {
+			padding-top: ($spacer/4);
+			padding-bottom: ($spacer/4);
+			border-bottom: 1px solid #fff;
+		}
+	}
+
+	.modal-header {
+		border-bottom: none;
+	}
+}
+
+// Fallback menu
+.fallback ul {
+	padding-left: 0px;
+
+	li a {
+		display: table;
+	}
+
+	li.current_page_item a {
+		//border-bottom: 1px solid $accent-color;
+	}
+}
+
+///////////////////////////////////
+// Sidebar
+//////////////////////////////////
+.widget {
+	ul {
+		@extend .list-group;
+
+		li {
+			@extend .list-group-item;
+			border-left: 0;
+			border-right: 0;
+		}
+	}
+}

@@ -1,0 +1,13 @@
+.hero {
+	@extend .jumbotron;
+
+	h1 {
+		@extend .display-4;
+	}
+
+	.btn {
+		@include button-outline-variant($dark, $white)
+	}
+
+
+}

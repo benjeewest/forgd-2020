@@ -1,5 +1,18 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
-@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700;900&family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+//Layout
+@import "partials/layout";
+
+// Typography
+@import "partials/components";
+
+// Heros
+@import "partials/hero";
 
 // Typography
 @import "partials/typography";
+
+// Wordpress Blocks support
+@import "partials/gutenberg";
+//

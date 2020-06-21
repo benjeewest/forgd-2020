@@ -1,0 +1,38 @@
+.post-navigation {
+	.nav-links {
+		border: $border-width solid $midnight;
+
+		span {
+			@extend .nav-item;
+		}
+	}
+}
+
+.entry-meta {
+	font-family: $headings-font-family;
+	font-weight: 400;
+}
+
+.cat-links {
+	a {
+		font-family: $headings-font-family;
+		font-weight: 400;
+		@extend .badge;
+		@include badge-variant($midnight);
+	}
+}
+
+article {
+	position: relative;
+
+	.pseudolink {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		overflow: hidden;
+		text-indent: 200%;
+		white-space: nowrap;
+		background: rgba(0, 0, 0, 0);
+	}
+}

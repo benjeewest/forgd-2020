@@ -8,15 +8,17 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 ?>
-<div class="jumbotron bg-primary text-white">
+<div class="hero bg-secondary text-white pt-5">
+
+	<!--<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/forgd-logo-svg.svg">-->
 	<div class="container">
-		<h1 class="display-4">Lorem ipsum delor set amet</h1>
+		<h1 class="balance-text">Lorem ipsum delor set amet</h1>
 		<p class="lead">TEST TEST TESTdsdssdsds for anyone who believes in a L</p>
 		<hr class="my-4">
 		<p>rtrtrtrtrtrtdffggfghghhjhjhhj
 		</p>
 		<p class="lead">
-			<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+			<a class="btn btn-lg" href="#" role="button">Learn more</a>
 		</p>
 	</div>
 </div>

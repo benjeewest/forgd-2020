@@ -75,3 +75,56 @@ if ( ! function_exists( 'understrap_tiny_mce_before_init' ) ) {
 		return $settings;
 	}
 }
+
+/**
+ * Register support for Gutenberg wide images in your theme
+ */
+function mytheme_setup() {
+  add_theme_support( 'align-wide' );
+}
+add_action( 'after_setup_theme', 'mytheme_setup' );
+
+function mytheme_setup_theme_supported_features() {
+    add_theme_support( 'editor-color-palette', array(
+        array(
+            'name' => __( 'Teal', 'themeLangDomain' ),
+            'slug' => 'teal',
+            'color' => '#076873',
+        ),
+        array(
+            'name' => __( 'Mustard', 'themeLangDomain' ),
+            'slug' => 'mustard',
+            'color' => '#F28B30',
+        ),
+        array(
+            'name' => __( 'Orange', 'themeLangDomain' ),
+            'slug' => 'orange',
+            'color' => '#F23C13',
+        ),
+        array(
+            'name' => __( 'Pink', 'themeLangDomain' ),
+            'slug' => 'pink',
+            'color' => '#F2887E',
+        ),
+        array(
+            'name' => __( 'Maroon', 'themeLangDomain' ),
+            'slug' => 'maroon',
+            'color' => '#A65D56',
+        ),
+        array(
+            'name' => __( 'White', 'themeLangDomain' ),
+            'slug' => 'white',
+            'color' => '#ffffff',
+        ),
+        array(
+            'name' => __( 'Midnight', 'themeLangDomain' ),
+            'slug' => 'midnight',
+            'color' => '#03272b',
+        ),				
+
+    ) );
+}
+ 
+add_action( 'after_setup_theme', 'mytheme_setup_theme_supported_features' );
+add_theme_support( 'editor-gradient-presets', array() );
+add_theme_support( 'disable-custom-gradients' );

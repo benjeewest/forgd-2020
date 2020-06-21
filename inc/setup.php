@@ -96,6 +96,9 @@ if ( ! function_exists ( 'understrap_setup' ) ) {
 
 		// Check and setup theme default settings.
 		understrap_setup_theme_default_settings();
+		
+		//Add Gutenberg Full Width support
+		add_theme_support( 'align-wide' );
 
 	}
 }
@@ -131,9 +134,16 @@ if ( ! function_exists( 'understrap_all_excerpts_get_more_link' ) ) {
 	 */
 	function understrap_all_excerpts_get_more_link( $post_excerpt ) {
 		if ( ! is_admin() ) {
-			$post_excerpt = $post_excerpt . ' [...]<p><a class="btn btn-secondary understrap-read-more-link" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . __( 'Read More...',
-			'understrap' ) . '</a></p>';
+			$post_excerpt = $post_excerpt;
 		}
 		return $post_excerpt;
 	}
+}
+
+/* Disable Gutenberg default block styles */
+// Don't load Gutenberg-related stylesheets.
+add_action( 'wp_enqueue_scripts', 'remove_block_css', 100 );
+function remove_block_css() {
+    wp_dequeue_style( 'wp-block-library' ); // WordPress core
+    wp_dequeue_style( 'wp-block-library-theme' ); // WordPress core
 }

@@ -8,6 +8,7 @@
 @import "../../src/sass/bootstrap4/functions";
 @import "../../src/sass/bootstrap4/variables";
 @import "../../src/sass/bootstrap4/mixins";
+$colors: map-remove($colors, "blue", "indigo", "purple", "red", "yellow", "green", "cyan");
 @import "../../src/sass/bootstrap4/root";
 @import "../../src/sass/bootstrap4/reboot";
 @import "../../src/sass/bootstrap4/type";

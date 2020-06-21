@@ -2,23 +2,131 @@
 // To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
 // Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
 
-$spacer: 1.5rem;
-$font-size-base: 1.125rem;  
+// Spacing
+$spacer: 1.75rem;
+$font-size-base: 1rem;
 
 $enable-rounded: false;
 $enable-shadows: true;
 $enable-responsive-font-sizes: true;
 
-$font-family-sans-serif:'Lato',serif;
-$headings-font-family: 'Frank Ruhl Libre', serif;
+
+$spacers: (0: 0,
+	1: ($spacer * .25),
+	2: ($spacer * .5),
+	3: $spacer,
+	4: ($spacer * 2),
+	5: ($spacer * 4));
+// Colors
+/* Color Theme Swatches in Hex */
+$teal: #076873;
+$mustard: #F28B30;
+$orange: #F23C13;
+$pink: #F2887E;
+$maroon: #A65D56;
+$white: #ffffff;
+$midnight: #03272b;
+
+
+$colors: ("teal": $teal,
+	"mustard":$mustard,
+	"orange":$orange,
+	"pink": $pink,
+	"maroon": $maroon,
+	"white": $white,
+	"midnight":$midnight);
+
+
+$primary: $teal;
+$secondary: $pink;
+$success: $teal;
+$info: $mustard;
+$warning: $orange;
+$danger: $maroon;
+$light: $white;
+$dark: $midnight;
+$transparent: transparent;
+
+//Radius
+$border-radius: 0;
+$border-radius-lg: 0;
+$border-radius-sm: 0;
+
+// Typography
+$body-color: #191e23;
+$font-family-sans-serif:'inter',
+sans-serif;
+$font-family-serif:'Noto Serif',
+serif;
+
+$headings-font-family: $font-family-sans-serif;
+$font-family-base: $font-family-serif;
+
 $headings-font-weight: 700;
-$headings-margin-bottom:      $spacer / 4;
+$headings-margin-bottom: $spacer / 4;
 
-$line-height-base:            1.75;
+$display1-weight: 800;
+$display2-weight: 800;
+$display3-weight: 800;
+$display4-weight: 800;
 
-$paragraph-margin-bottom:   $spacer;
+$line-height-base: 1.75;
+$paragraph-margin-bottom: $spacer;
 
-$red: #C10F6A;
+$hr-border-color: $midnight;
 
-$primary: $red;
-$link-decoration:                         underline;
+$link-decoration: none;
+$link-hover-decoration: none;
+
+// Table
+$table-cell-padding: $spacer/6;
+
+// Wordpress
+$wp-adminbar-offset: 32px;
+
+//Buttons
+$input-btn-border-width: 1px;
+
+//Components
+$border-width: 1.5px;
+$border-color: $dark;
+
+//List group
+$list-group-border-color: $midnight;
+$list-group-item-padding-x: 0;
+
+//Modal
+$modal-content-border-color:transparent;
+$modal-content-border-width: 0;
+$modal-content-box-shadow-xs: none;
+$modal-content-box-shadow-sm-up: none;
+
+//Togler
+$navbar-dark-color: rgba($white, .75);
+$navbar-dark-toggler-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='square' stroke-miterlimit='10' stroke-width='4' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+$navbar-dark-toggler-border-color: transparent;
+$navbar-toggler-padding-y: 0;
+$navbar-toggler-padding-x: 0;
+
+/* Color Theme Swatches in Hex 
+$MIMIM-Zine- //-Glam-Rock-Issue-1-hex: #F24452;
+$MIMIM-Zine- //-Glam-Rock-Issue-2-hex: #032CA6;
+$MIMIM-Zine- //-Glam-Rock-Issue-3-hex: #F2E41D;
+$MIMIM-Zine- //-Glam-Rock-Issue-4-hex: #A67D03;
+$MIMIM-Zine- //-Glam-Rock-Issue-5-hex: #0D0D0D;*/
+
+
+
+/* Color Theme Swatches in Hex 
+$Publicist.co-1-hex: #0FA697;
+$Publicist.co-2-hex: #400808;
+$Publicist.co-3-hex: #F22222;
+$Publicist.co-4-hex: #F25C5C;
+$Publicist.co-5-hex: #F2F2F2;*/
+
+/* Color Theme Swatches in Hex
+$Norm-Architects-—-web,-brand-1-hex: #F2F2F0;
+$Norm-Architects-—-web,-brand-2-hex: #BFBFBD;
+$Norm-Architects-—-web,-brand-3-hex: #59402A;
+$Norm-Architects-—-web,-brand-4-hex: #8C8784;
+$Norm-Architects-—-web,-brand-5-hex: #D9430D;*/

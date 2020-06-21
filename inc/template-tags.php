@@ -33,18 +33,23 @@ if ( ! function_exists( 'understrap_posted_on' ) ) {
 				apply_filters( 'understrap_posted_on_time', $time_string )
 			)
 		);
-		$byline      = apply_filters(
+		
+
+		echo $posted_on; // WPCS: XSS OK.
+	}
+}
+if ( ! function_exists( 'understrap_posted_by' ) ) {
+	function understrap_posted_by() {
+				$byline      = apply_filters(
 			'understrap_posted_by', sprintf(
 				'<span class="byline"> %1$s<span class="author vcard"><a class="url fn n" href="%2$s"> %3$s</a></span></span>',
-				$posted_on ? esc_html_x( 'by', 'post author', 'understrap' ) : esc_html_x( 'Posted by', 'post author', 'understrap' ),
+				$posted_on ? esc_html_x( '', 'post author', 'understrap' ) : esc_html_x( '', 'post author', 'understrap' ),
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 				esc_html( get_the_author() )
 			)
 		);
-		echo $posted_on . $byline; // WPCS: XSS OK.
-	}
-}
-
+		echo $byline; // WPCS: XSS OK.
+	}}
 
 /**
  * Prints HTML with meta information for the categories, tags and comments.
@@ -57,14 +62,9 @@ if ( ! function_exists( 'understrap_entry_footer' ) ) {
 			$categories_list = get_the_category_list( esc_html__( ', ', 'understrap' ) );
 			if ( $categories_list && understrap_categorized_blog() ) {
 				/* translators: %s: Categories of current post */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %s', 'understrap' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="cat-links">' . esc_html__( '%s', 'understrap' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'understrap' ) );
-			if ( $tags_list ) {
-				/* translators: %s: Tags of current post */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %s', 'understrap' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-			}
 		}
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link">';
