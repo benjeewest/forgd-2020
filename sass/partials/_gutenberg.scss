@@ -211,7 +211,6 @@ p.has-text-color a {
 // .wp-block-pullquote
 
 
-
 /**
  * 4.0 - Button
  */
@@ -262,13 +261,9 @@ p.has-text-color a {
  * 5.1 - Image
  */
 .wp-block-image {
+
 	// uses <figure> element
 	// <img> as a descendent
-	max-width: 100%;
-	margin-bottom: 1em;
-	margin-left: 0;
-	margin-right: 0;
-
 	img {
 		max-width: 100%;
 	}
@@ -277,9 +272,11 @@ p.has-text-color a {
 		text-align: center;
 	}
 
-	&.alignfull img,
-	&.alignwide img {
-		width: 100%;
+	&.alignwide,
+	&.alignfull {
+		img {
+			width: 100%;
+		}
 	}
 
 	.alignleft,
@@ -314,22 +311,38 @@ p.has-text-color a {
 	}
 
 	.aligncenter {
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	figcaption {
-		margin-top: 0.5em;
-		margin-bottom: 1em;
-		color: #555d66;
-		text-align: center;
-		font-size: 13px;
+		@include mx(auto)
 	}
 
 }
 
 // .wp-block-image
+@mixin alignwide-widths($container) {
+	width: #{$container};
+	margin-left: calc(50% - #{$column-padding});
+	margin-right: calc(50% - #{$column-padding});
+}
 
+.alignwide {
+
+	@each $name,
+	$width in $container-max-widths {
+		@include media-breakpoint-up(#{$name}) {
+			@include alignwide-widths(#{$width});
+
+		}
+	}
+}
+
+
+.alignfull {
+	@include media-breakpoint-up(md) {
+		margin-left: calc(50% - 50vw);
+		margin-right: calc(50% - 50vw);
+		max-width: 100vw;
+		width: 100vw;
+	}
+}
 
 /**
  * 5.2 - Gallery
@@ -1103,15 +1116,7 @@ pre.wp-block-verse {
 /**
  * 12.0 - Columns
  */
-.wp-block-columns {
-	display: flex;
-	flex-wrap: wrap;
 
-	@media (min-width: 782px) {
-		flex-wrap: nowrap;
-	}
-
-}
 
 // .wp-block-columns
 
@@ -1119,40 +1124,61 @@ pre.wp-block-verse {
 // 	no styles applied
 // }
 
-.wp-block-column {
-	flex: 1;
-	margin-bottom: 1em;
-	flex-basis: 100%;
-	min-width: 0;
-	word-break: break-word;
-	overflow-wrap: break-word;
 
-	@media (min-width: 600px) {
-		flex-basis: 50%;
-		flex-grow: 0;
+/**
+* Columns
+*/
+
+.wp-block-text-columns,
+.wp-block-columns {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -15px;
+	margin-right: -15px;
+
+	.wp-block-column {
+		@include make-col-ready();
+
+
+	}
+
+	&.has-2-columns,
+	&.columns-2 {
+		.wp-block-column {
+			@include make-col(6);
+		}
+	}
+
+	&.has-3-columns,
+	&.columns-3 {
+		.wp-block-column {
+			@include make-col(4);
+		}
+	}
+
+	&.columns-4 {
+		.wp-block-column {
+			@include make-col(3);
+		}
+	}
+
+
+}
+
+.wp-block-columns.alignwide,
+.wp-block-text-columns.alignwide {
+	@include media-breakpoint-up(md) {
+		width: 1140px;
+		margin-left: calc(50% - 570px);
+		margin-right: calc(50% - 570px);
 	}
 
 }
 
-// .wp-block-column
-
-@media (min-width: 600px) {
-
-	.wp-block-column:nth-child(odd) {
-		margin-right: 32px;
-	}
-
-	.wp-block-column:nth-child(even) {
-		margin-left: 32px;
-	}
-
-	.wp-block-column:not(:first-child) {
-		margin-left: 32px;
-	}
-
-	.wp-block-column:not(:last-child) {
-		margin-right: 32px;
-	}
+.wp-block-columns.alignfull,
+.wp-block-text-columns.alignfull {
+	margin-left: calc(50% - 50vw + 7.5px);
+	margin-right: calc(50% - 50vw + 7.5px);
 
 }
 

@@ -87,6 +87,10 @@ $wp-adminbar-offset: 32px;
 //Buttons
 $input-btn-border-width: 1px;
 
+//Layout
+$grid-gutter-width: 30px;
+$column-padding: $grid-gutter-width/2;
+
 //Components
 $border-width: 1.5px;
 $border-color: $dark;
@@ -100,6 +104,8 @@ $modal-content-border-color:transparent;
 $modal-content-border-width: 0;
 $modal-content-box-shadow-xs: none;
 $modal-content-box-shadow-sm-up: none;
+$modal-backdrop-bg: $midnight;
+$modal-backdrop-opacity: 0.2;
 
 //Togler
 $navbar-dark-color: rgba($white, .75);

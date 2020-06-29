@@ -1,6 +1,6 @@
 // Some basic padding for all wrappers
 .wrapper {
-	padding: $grid-gutter-width 0;
+	@include mt(5);
 }
 
 // Reset hero wrapper padding to 0
@@ -41,21 +41,8 @@
 	@extend .sr-only;
 }
 
-.alignleft {
-	display: inline;
-	float: left;
-	margin-right: $spacer;
-}
 
-.alignright {
-	display: inline;
-	float: right;
-	margin-left: $spacer;
-}
 
-.aligncenter {
-	@include mx(auto);
-}
 
 // Post design
 .entry-footer span {
@@ -63,11 +50,7 @@
 }
 
 // Limit featured image size to 100%
-img.wp-post-image,
-article img,
-figure,
-img,
-#secondary img {
+img.wp-post-image {
 	max-width: 100%;
 	height: auto;
 }
