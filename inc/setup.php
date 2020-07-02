@@ -217,10 +217,17 @@ remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
 remove_action('template_redirect', 'rest_output_link_header', 11, 0);
 
 
-function forgd_cleanup_query_string( $src ){ 
+/* function forgd_cleanup_query_string( $src ){ 
 	$parts = explode( '?', $src ); 
 	return $parts[0]; 
 } 
 add_filter( 'script_loader_src', 'forgd_cleanup_query_string', 15, 1 ); 
 add_filter( 'style_loader_src', 'forgd_cleanup_query_string', 15, 1 );
-
+*/
+// -- Disable Gradients
+add_theme_support( 'disable-custom-gradients' );
+add_theme_support( 'editor-gradient-presets', array() );
+// -- Disable Custom Colors
+add_theme_support( 'disable-custom-colors' );
+// Add support for responsive embedded content.
+add_theme_support( 'responsive-embeds' );

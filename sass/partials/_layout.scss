@@ -2,19 +2,17 @@
 / Set up pages columns etc
 /*-------------*/
 
-
-//Pages
-.page {
-	.wrapper {
-		overflow-x: hidden;
-	}
-
-	.entry-content {
-		@include make-col-ready();
-		@include make-col(10);
-		@include make-col-offset(1)
-	}
+//Make sure nothing overflows
+.site {
+	width: 100%;
+	overflow-x: hidden;
 }
+
+.wrapper {
+	@include make-container;
+	@include make-container-max-widths();
+}
+
 
 //Posts
 .single {
@@ -46,21 +44,6 @@
 				}
 			}
 
-			.entry-content {
-				@include make-col-ready();
-
-				@include media-breakpoint-up(md) {
-					@include make-col(6);
-					@include make-col-offset(1)
-				}
-
-				@include media-breakpoint-up(lg) {
-					@include make-col(6);
-					@include make-col-offset(1)
-				}
-
-
-			}
 		}
 	}
 }
@@ -107,6 +90,12 @@
 }
 
 .site-header {
+	.inner {
+		display: flex;
+		@include make-container();
+		@include make-container-max-widths();
+	}
+
 	@extend .navbar;
 	@include transition(all 1s);
 	border-bottom: 1px solid rgba($white, 0.3);
@@ -121,6 +110,11 @@
 		@include my(auto);
 		font-style: italic;
 		@include pb(0);
+		display: none;
+
+		@include media-breakpoint-up(sm) {
+			display: block;
+		}
 	}
 
 	&.top {
@@ -135,6 +129,8 @@
 	}
 
 	.navbar-toggler {
+		@include ml(auto);
+
 		&:focus {
 			.navbar-toggler-icon {
 				background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#{$navbar-light-color}' stroke-linecap='square' stroke-miterlimit='10' stroke-width='4' d='M4 7h22M4 15h22M4 23h22'/></svg>");

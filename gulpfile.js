@@ -197,6 +197,8 @@ gulp.task('scripts', function () {
 		paths.dev + '/js/skip-link-focus-fix.js',
 
 		paths.dev + '/js/headroom.js',
+		
+		paths.dev + '/js/Tocca.js',
 
 				// paths.dev + '/js/balancetext.js',
 
@@ -243,6 +245,10 @@ gulp.task('copy-assets', function (done) {
 
 	var stream = gulp
 		.src(paths.node + '/headroom.js/dist/headroom.js')
+		.pipe(gulp.dest(paths.dev + '/js'));
+	
+	var stream = gulp
+		.src(paths.node + '/tocca/Tocca.js')
 		.pipe(gulp.dest(paths.dev + '/js'));
 
 	var stream = gulp

@@ -54,6 +54,7 @@
 		"popper.js": "^1.16.1",
 		"rfs": "^9.0.3",
 		"run-sequence": "^2.2.1",
+		"tocca": "^2.0.9",
 		"undescores-for-npm": "^1.0.0"
 	},
 	"devDependencies": {

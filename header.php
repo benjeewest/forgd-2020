@@ -9,8 +9,6 @@
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
-
-$container = get_theme_mod( 'understrap_container_type' );
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -33,10 +31,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 			<nav class="site-header" role="banner">
 
-				<?php if ( 'container' == $container ) : ?>
-				<div class="container">
-					<?php endif; ?>
-
+				<div class="inner">
 					<!-- Your site title as branding in the menu -->
 
 					<?php if ( ! has_custom_logo() ) { ?>
@@ -62,9 +57,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						<span class="navbar-toggler-icon"></span>
 					</button>
 
-					<?php if ( 'container' == $container ) : ?>
-				</div><!-- .container -->
-				<?php endif; ?>
+				</div>
 
 			</nav><!-- .site-navigation -->
 

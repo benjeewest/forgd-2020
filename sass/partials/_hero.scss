@@ -1,6 +1,11 @@
 .hero {
 	@extend .jumbotron;
 
+	.inner {
+		@include make-container;
+		@include make-container-max-widths();
+	}
+
 	h1 {
 		@extend .display-4;
 	}

@@ -7,9 +7,9 @@ $spacer: 1.75rem;
 $font-size-base: 1rem;
 
 $enable-rounded: false;
-$enable-shadows: true;
+$enable-shadows: false;
 $enable-responsive-font-sizes: true;
-
+$enable-grid-classes: false;
 
 $spacers: (0: 0,
 	1: ($spacer * .25),
@@ -63,7 +63,29 @@ $headings-font-family: $font-family-sans-serif;
 $font-family-base: $font-family-serif;
 
 $headings-font-weight: 700;
-$headings-margin-bottom: $spacer / 4;
+$headings-margin-bottom: $spacer/2;
+
+$h1-factor: 4.209;
+$h2-factor: 3.157;
+$h3-factor: 2.369;
+$h4-factor: 1.777;
+$h5-factor: 1.333;
+$h6-factor: 1;
+
+$heading-factors: ("h1":$h1-factor,
+	"h2":$h2-factor,
+	"h3":$h3-factor,
+	"h4":$h4-factor,
+	"h5":$h5-factor,
+	"h6":$h6-factor);
+
+
+$h1-font-size: $font-size-base * $h1-factor;
+$h2-font-size: $font-size-base * $h2-factor;
+$h3-font-size: $font-size-base * $h4-factor;
+$h4-font-size: $font-size-base * $h4-factor;
+$h5-font-size: $font-size-base * $h5-factor;
+$h6-font-size: $font-size-base * $h6-factor;
 
 $display1-weight: 800;
 $display2-weight: 800;
@@ -87,8 +109,11 @@ $wp-adminbar-offset: 32px;
 //Buttons
 $input-btn-border-width: 1px;
 
+$input-btn-padding-y: $spacer * 0.5;
+$input-btn-padding-x: $spacer * 0.75;
+
 //Layout
-$grid-gutter-width: 30px;
+$grid-gutter-width: 32px;
 $column-padding: $grid-gutter-width/2;
 
 //Components
@@ -98,6 +123,8 @@ $border-color: $dark;
 //List group
 $list-group-border-color: $midnight;
 $list-group-item-padding-x: 0;
+$list-group-bg: transparent;
+
 
 //Modal
 $modal-content-border-color:transparent;

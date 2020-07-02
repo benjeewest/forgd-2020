@@ -8,10 +8,10 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 ?>
-<div class="hero bg-secondary text-white pt-5">
+<div class="hero bg-secondary text-white">
 
 	<!--<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/forgd-logo-svg.svg">-->
-	<div class="container">
+	<div class="inner">
 		<h1 class="balance-text">Lorem ipsum delor set amet</h1>
 		<p class="lead">TEST TEST TESTdsdssdsds for anyone who believes in a L</p>
 		<hr class="my-4">

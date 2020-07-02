@@ -1,3 +1,13 @@
+@each $heading,
+$factor in $heading-factors {
+	#{$heading} {
+		$header-margin: $spacer * $factor;
+		margin-top: $header-margin * 0.666;
+		margin-bottom: $header-margin * 0.333;
+	}
+
+}
+
 .post {
 	@include my(4);
 
@@ -67,16 +77,7 @@
 		@extend .table;
 	}
 
-	blockquote {
-		@extend .blockquote;
 
-		border-left: $spacer/2 solid $secondary;
-		padding-left: $spacer;
-
-		p:last-of-type {
-			margin-bottom: 0;
-		}
-	}
 
 }
 
