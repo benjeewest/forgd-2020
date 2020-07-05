@@ -63,26 +63,6 @@ p.has-background {
 }
 
 /**
- *  Colors
- */
-
-@each $name,
-$color in $colors {
-	.has-#{$name}-background-color {
-		background-color: $color;
-		color: color-yiq($color);
-	}
-
-	.has-#{$name}-color {
-		color: $color;
-	}
-}
-
-.has-very-light-gray-background-color {
-	background-color: $gray-200;
-}
-
-/**
  * 1.0 - Paragraph
  */
 p.has-drop-cap:not(:focus)::first-letter {
@@ -1323,4 +1303,24 @@ p.is-large-text {
 
 p.is-larger-text {
 	font-size: 48px;
+}
+
+/**
+ *  Colors
+ */
+
+@each $name,
+$color in $colors {
+	.has-#{$name}-background-color {
+		background-color: $color;
+		color: color-yiq($color);
+	}
+
+	.has-#{$name}-color {
+		color: $color;
+	}
+}
+
+.has-very-light-gray-background-color {
+	background-color: $gray-200;
 }
