@@ -26,13 +26,76 @@ article {
 	position: relative;
 
 	.pseudolink {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		overflow: hidden;
-		text-indent: 200%;
-		white-space: nowrap;
-		background: rgba(0, 0, 0, 0);
+		@include pseudolink;
+	}
+
+}
+
+.share-bar {
+
+	margin-right: - $spacer * 4;
+	padding-left: $spacer;
+	width: 3 * $spacer;
+
+
+	&-list {
+		@include list-unstyled();
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+
+
+
+	}
+
+	&-link {
+		background-color: lighten($secondary, 20);
+		border-bottom: solid $border-width $light;
+		color: $white;
+		width: $spacer*2.75;
+		@include fontawesome();
+		padding: $spacer * 0.75;
+		font-size: $spacer * 1.25;
+		text-align: center;
+		@include transition(all 500ms);
+
+
+		&:hover {
+			background-color: $secondary;
+			color: $white;
+			width: $spacer * 3.25
+		}
+
+		&:before {
+			display: block;
+		}
+
+		&-twitter {
+			&:before {
+				content: "\f099";
+
+			}
+		}
+
+		&-facebook {
+			&:before {
+				content: "\f082";
+
+			}
+		}
+
+		&-whatsapp {
+			&:before {
+				content: "\f232";
+
+			}
+		}
+
+		&-email {
+			&:before {
+				content: "\f003";
+
+			}
+		}
 	}
 }

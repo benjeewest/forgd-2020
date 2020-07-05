@@ -58,36 +58,8 @@
  * - SHORTCODE BLOCKS
  */
 
-/** 
- *  Layout
- */
-@mixin containers {
-	position: relative;
-	width: 100%;
-	@include mx(auto);
-
-	@include media-breakpoint-up(md) {
-		@include make-col(10);
-		@include make-col-offset(1);
-	}
-
-	@include media-breakpoint-up(lg) {
-		@include make-col(8);
-		@include make-col-offset(2);
-	}
-}
-
-.entry-content {
-	@include make-row(0);
-
-	& > *:not(.alignwide):not(.alignfull):not(.is-style-wide) {
-		@include containers;
-
-		&.has-background {
-			@include make-col-ready();
-		}
-	}
-
+p.has-background {
+	@include make-col-ready();
 }
 
 /**
@@ -1233,36 +1205,6 @@ pre.wp-block-verse {
  */
 
 /**/
-
-@mixin open-list {
-	display: flex;
-	flex-direction: column;
-	padding-left: 0;
-	@include my(2);
-
-	li {
-		position: relative;
-		display: block;
-		padding: $spacer/2 0;
-		background-color: $list-group-bg;
-		border-color: $list-group-border-color;
-		border-bottom: $border-width $list-group-border-color solid;
-		@include mb(0);
-
-
-		&:last-child {
-			border-bottom: none;
-		}
-
-	}
-
-	a {
-		color: inherit;
-		font-family: $font-family-sans-serif;
-		font-weight: $headings-font-weight;
-		line-height: $headings-line-height;
-	}
-}
 
 /* 30.1 - Categories Widget
  */

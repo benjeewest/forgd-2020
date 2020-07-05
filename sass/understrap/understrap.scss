@@ -1,53 +1,13 @@
 // Some basic padding for all wrappers
-.wrapper {
-	@include mt(5);
-}
+
 
 // Reset hero wrapper padding to 0
-#wrapper-hero {
-	padding: 0px !important;
-}
-
 // Adding basic WordPress classes to pass the WordPress.org tests
-.sticky,
-.gallery-caption,
-.bypostauthor {
-	font-size: inherit;
-}
-
-// Separate sticky wrapper from main content
-.wrapper#wrapper-sticky {
-	border-bottom: 1px solid $gray-300;
-}
-
-// Adding some contrast background color to footer full widget
-#wrapper-footer-full,
-#wrapper-static-hero {
-	background-color: $gray-200;
-}
-
-// Necessary WP classes
-.wp-caption {
-	@extend .figure;
-}
-
-.wp-caption-text {
-	@include mt(1);
-	font-family: $font-family-sans-serif;
-	@extend .figure-caption;
-}
 
 .screen-reader-text {
 	@extend .sr-only;
 }
 
-
-
-
-// Post design
-.entry-footer span {
-	padding-right: 10px;
-}
 
 // Limit featured image size to 100%
 img.wp-post-image {
@@ -101,7 +61,7 @@ a.skip-link {
 
 		// Remove CSS gradients if they're enabled
 		@if $enable-gradients {
-			background-image: none;
+			background-image: none
 		}
 	}
 }

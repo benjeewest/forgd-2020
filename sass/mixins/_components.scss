@@ -1,0 +1,51 @@
+@mixin pseudolink {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	overflow: hidden;
+	text-indent: 200%;
+	white-space: nowrap;
+	background: rgba(0, 0, 0, 0);
+}
+
+@mixin open-list {
+	display: flex;
+	flex-direction: column;
+	padding-left: 0;
+	@include my(2);
+
+	li {
+		position: relative;
+		display: block;
+		padding: $spacer/2 0;
+		background-color: $list-group-bg;
+		border-color: $list-group-border-color;
+		border-bottom: $border-width $list-group-border-color solid;
+		@include mb(0);
+
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+	}
+
+	a {
+		color: inherit;
+		font-family: $font-family-sans-serif;
+		font-weight: $headings-font-weight;
+		line-height: $headings-line-height;
+	}
+}
+
+@mixin fontawesome() {
+	display: block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+
+}

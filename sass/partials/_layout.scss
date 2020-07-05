@@ -5,43 +5,117 @@
 //Make sure nothing overflows
 .site {
 	width: 100%;
-	overflow-x: hidden;
+
 }
 
-.wrapper {
+.row {
+	@include make-row();
+}
+
+.inner {
 	@include make-container;
 	@include make-container-max-widths();
 }
 
+.site-main {
+	@include make-row();
+
+}
+
+@mixin widecontent {
+	position: relative;
+	width: 100%;
+	@include mx(auto);
+
+	@include media-breakpoint-up(md) {
+		@include make-col(10);
+		@include make-col-offset(1);
+	}
+
+	@include media-breakpoint-up(lg) {
+		@include make-col(8);
+		@include make-col-offset(2);
+	}
+}
+
+//Calculate navbar height
+$navbar-calc-height: $navbar-padding-y * 2 + $nav-link-height;
+
 
 //Posts
-.single {
+body.single {
+	.post {
 
+		@include make-row(0);
 
-	.site-main {
+		.entry-header {
+			@include make-col-ready();
 
+			@include media-breakpoint-up(md) {
+				@include make-col(5);
+				position: sticky;
+				top: $navbar-calc-height + 2rem;
+				height: 100vh;
+			}
 
-		.post {
-			@include make-row();
-			position: relative;
+		}
 
-			.entry-header {
-				@include make-col-ready();
+		.entry-title {
+			@include font-size($h2-font-size);
+
+			@include media-breakpoint-up(md) {
+				@include mt(5);
+			}
+
+		}
+
+		.entry-content {
+			overflow-x: hidden;
+			@include make-col-ready();
+
+			@include media-breakpoint-up(md) {
+				@include make-col(7);
 
 				@include media-breakpoint-up(md) {
-					@include make-col(5);
+					@include mt(5);
 				}
+			}
 
-				@include media-breakpoint-up(lg) {
-					@include make-col(5);
-					position: sticky;
-					height: 100vh;
-					top: $spacer * 4;
-				}
+		}
 
-				@include media-breakpoint-up(xl) {
-					@include make-col(4);
+		.share-bar {
+			@include media-breakpoint-up(sm) {
+				height: 50vh;
+				position: sticky;
+				right: 0;
+				top: $navbar-calc-height + 2rem;
+
+				&-list {
+					@include mt(5);
 				}
+			}
+		}
+
+	}
+}
+
+body.page {
+	.wrapper {
+		overflow-x: hidden;
+	}
+
+	article {
+		@include make-col-ready();
+		@include make-col(12);
+
+		.entry-content {
+
+			@include make-row(0);
+
+			& > *:not(.alignwide):not(.alignfull):not(.is-style-wide) {
+				@include widecontent;
+
+
 			}
 
 		}
@@ -50,43 +124,39 @@
 
 // Archives
 .archive {
-	.site-main {
-		@include make-row();
 
-		.content-area {
-			@include make-col-ready();
+	.content-area {
+		@include make-col-ready();
 
-			@include media-breakpoint-up(md) {
-				@include make-col(9);
-			}
-
-			@include media-breakpoint-up(lg) {
-				@include make-col(8);
-			}
+		@include media-breakpoint-up(md) {
+			@include make-col(9);
 		}
 
-		.sidebar {
-			@include make-col-ready();
-
-			@include media-breakpoint-up(md) {
-				@include make-col(3);
-			}
-
-			@include media-breakpoint-up(lg) {
-				@include make-col(4);
-			}
-
+		@include media-breakpoint-up(lg) {
+			@include make-col(8);
 		}
 	}
+
+	.sidebar {
+		@include make-col-ready();
+
+		@include media-breakpoint-up(md) {
+			@include make-col(3);
+		}
+
+		@include media-breakpoint-up(lg) {
+			@include make-col(4);
+		}
+
+	}
+
 }
 
 
 
 //Headroom
-.modal-open {
-	.site-header {
-		width: calc(100% - 17px) !important;
-	}
+#wrapper-navbar {
+	height: $navbar-calc-height;
 }
 
 .site-header {
@@ -98,10 +168,13 @@
 
 	@extend .navbar;
 	@include transition(all 1s);
-	border-bottom: 1px solid rgba($white, 0.3);
 	@extend .navbar-dark;
 	background-color: $secondary;
 	z-index: $zindex-fixed;
+
+	.navbar-brand {
+		margin-right: $grid-gutter-width
+	}
 
 	.brand-tagline {
 		@extend .navbar-text;
@@ -109,7 +182,6 @@
 		@include mr(auto);
 		@include my(auto);
 		font-style: italic;
-		@include pb(0);
 		display: none;
 
 		@include media-breakpoint-up(sm) {
@@ -138,6 +210,53 @@
 
 			outline: none;
 		}
+	}
+}
+
+// Footer
+.footer-full {
+	background-color: $primary;
+	color: $light;
+
+	a {
+		color: inherit;
+	}
+
+	.inner {
+		@include pt(5);
+	}
+
+	.widget {
+		@include make-col-ready();
+		@include make-col-auto();
+		-webkit-box-flex: 1;
+		-ms-flex-positive: 1;
+		flex-grow: 1;
+
+	}
+
+	.widget-title {
+		@include mt(0);
+	}
+
+	.widget_archive {
+		ul {
+			@include open-list;
+		}
+	}
+}
+
+// Site footer
+.site-footer {
+	background-color: $primary;
+	@include pt(3);
+	@include pb(4);
+	color: $light;
+	font-family: $font-family-sans-serif;
+	font-size: $font-size-small;
+
+	a {
+		color: inherit;
 	}
 }
 

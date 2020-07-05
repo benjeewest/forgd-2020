@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 
 	<header class="entry-header">
 
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php the_title( '<h1 class="entry-title balance-text">', '</h1>' ); ?>
 
 		<div class="entry-meta">
 
@@ -39,7 +39,7 @@ defined( 'ABSPATH' ) || exit;
 		?>
 
 	</div><!-- .entry-content -->
-
+	<?php get_template_part( 'global-templates/sharer', 'bar' ); ?>
 	<footer class="entry-footer">
 
 		<?php understrap_entry_footer(); ?>

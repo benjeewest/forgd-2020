@@ -3,7 +3,7 @@
 // Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
 
 // Spacing
-$spacer: 1.75rem;
+$spacer: 1rem;
 $font-size-base: 1rem;
 
 $enable-rounded: false;
@@ -61,9 +61,13 @@ serif;
 
 $headings-font-family: $font-family-sans-serif;
 $font-family-base: $font-family-serif;
+$headings-line-height: 1.1;
 
 $headings-font-weight: 700;
 $headings-margin-bottom: $spacer/2;
+
+$font-size-lg: $font-size-base * 1.25;
+$font-size-small: $font-size-base * 0.75;
 
 $h1-factor: 4.209;
 $h2-factor: 3.157;
@@ -113,8 +117,11 @@ $input-btn-padding-y: $spacer * 0.5;
 $input-btn-padding-x: $spacer * 0.75;
 
 //Layout
-$grid-gutter-width: 32px;
-$column-padding: $grid-gutter-width/2;
+$grid-gutter-width: $spacer * 2;
+$column-padding: $spacer;
+
+//navbar
+$navbar-padding-y: $spacer * 0.75;
 
 //Components
 $border-width: 1.5px;

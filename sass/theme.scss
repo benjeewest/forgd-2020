@@ -2,7 +2,9 @@
 @import "assets/bootstrap4"; // <-------- Loads Bootstrap4
 // Spacing
 @import "partials/spacing";
-@import "understrap/understrap"; // <-------- Loads the UnderStrap defaults. Just a few classes to incorporate BS in WP
+@import "mixins/icons";
+@import "mixins/components";
+@import "understrap/understrap"; // <-------- Loads the UnderStrap defaults. Just a few classes @import "mixins/components";to incorporate BS in WP
 //@import "understrap/woocommerce"; // <-------- Loads WooCommerce style fixes. Comment out if you aren't using WooCommerce
 @import "assets/headroom"; // <-------- Headroom.js
 

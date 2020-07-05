@@ -9,8 +9,6 @@ $factor in $heading-factors {
 }
 
 .post {
-	@include my(4);
-
 	.wp-post-image {
 		margin-bottom: $paragraph-margin-bottom;
 	}

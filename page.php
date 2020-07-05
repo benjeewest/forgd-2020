@@ -23,7 +23,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 
 
-
+	<div class="inner" id="content" tabindex="-1">
 
 		<main class="site-main" id="main" tabindex="-1">
 
@@ -35,9 +35,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<?php endwhile; // end of the loop. ?>
 
 		</main><!-- #main -->
+	</div>
 
-
-	</div><!-- #content -->
+</div><!-- #content -->
 
 
 

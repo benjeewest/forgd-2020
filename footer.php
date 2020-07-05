@@ -10,36 +10,29 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$container = get_theme_mod( 'understrap_container_type' );
-?>
+get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
 
-<?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
+<footer class="wrapper site-footer" id="wrapper-footer">
 
-<div class="wrapper" id="wrapper-footer">
+	<div class="inner">
 
-	<div class="<?php echo esc_attr( $container ); ?>">
 
-		<div class="row">
 
-			<div class="col-md-12">
 
-				<footer class="site-footer" id="colophon">
+		<div class="site-info" id="colophon">
 
-					<div class="site-info">
+			Copyright Forgd Ltd, 2020
 
-						<?php understrap_site_info(); ?>
+		</div><!-- .site-info -->
 
-					</div><!-- .site-info -->
 
-				</footer><!-- #colophon -->
 
-			</div><!--col end -->
 
-		</div><!-- row end -->
+
 
 	</div><!-- container end -->
 
-</div><!-- wrapper end -->
+</footer><!-- wrapper end -->
 
 </div><!-- #page we need this extra closing tag here -->
 
@@ -48,4 +41,3 @@ $container = get_theme_mod( 'understrap_container_type' );
 </body>
 
 </html>
-
