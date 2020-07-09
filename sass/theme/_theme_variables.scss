@@ -2,6 +2,9 @@
 // To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
 // Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
 
+//Contrast
+$yiq-contrasted-threshold: 150;
+
 // Spacing
 $spacer: 1rem;
 $font-size-base: 1rem;
@@ -9,14 +12,15 @@ $font-size-base: 1rem;
 $enable-rounded: false;
 $enable-shadows: false;
 $enable-responsive-font-sizes: true;
-$enable-grid-classes: false;
+//$enable-grid-classes: true;
 
 $spacers: (0: 0,
 	1: ($spacer * .25),
 	2: ($spacer * .5),
 	3: $spacer,
 	4: ($spacer * 2),
-	5: ($spacer * 4));
+	5: ($spacer * 4),
+	6: ($spacer * 8));
 // Colors
 /* Color Theme Swatches in Hex */
 $teal: #076873;
@@ -66,14 +70,15 @@ $headings-line-height: 1.1;
 $headings-font-weight: 700;
 $headings-margin-bottom: $spacer/2;
 
+$font-size-xl: $font-size-base * 1.5;
 $font-size-lg: $font-size-base * 1.25;
 $font-size-small: $font-size-base * 0.75;
 
-$h1-factor: 4.209;
-$h2-factor: 3.157;
-$h3-factor: 2.369;
-$h4-factor: 1.777;
-$h5-factor: 1.333;
+$h1-factor: 3.052;
+$h2-factor: 2.441;
+$h3-factor: 1.953;
+$h4-factor: 1.563;
+$h5-factor: 1.25;
 $h6-factor: 1;
 
 $heading-factors: ("h1":$h1-factor,
@@ -86,7 +91,7 @@ $heading-factors: ("h1":$h1-factor,
 
 $h1-font-size: $font-size-base * $h1-factor;
 $h2-font-size: $font-size-base * $h2-factor;
-$h3-font-size: $font-size-base * $h4-factor;
+$h3-font-size: $font-size-base * $h3-factor;
 $h4-font-size: $font-size-base * $h4-factor;
 $h5-font-size: $font-size-base * $h5-factor;
 $h6-font-size: $font-size-base * $h6-factor;
@@ -110,11 +115,22 @@ $table-cell-padding: $spacer/6;
 // Wordpress
 $wp-adminbar-offset: 32px;
 
-//Buttons
-$input-btn-border-width: 1px;
 
+//Input config
+$component-active-bg: $pink;
+
+//Buttons
+$input-btn-font-family: $font-family-sans-serif;
+$input-btn-border-width: 1px;
+$input-btn-padding-x: $spacer * 1;
 $input-btn-padding-y: $spacer * 0.5;
-$input-btn-padding-x: $spacer * 0.75;
+
+$input-btn-padding-x-lg: $spacer * 2;
+$input-btn-padding-y-lg: $spacer;
+
+$input-btn-focus-color: $component-active-bg;
+
+
 
 //Layout
 $grid-gutter-width: $spacer * 2;
@@ -140,6 +156,13 @@ $modal-content-box-shadow-xs: none;
 $modal-content-box-shadow-sm-up: none;
 $modal-backdrop-bg: $midnight;
 $modal-backdrop-opacity: 0.2;
+
+// Input form
+$input-border-color: $midnight;
+$input-box-shadow: none;
+$input-font-family: $font-family-sans-serif;
+$input-focus-border-color: $component-active-bg;
+
 
 //Togler
 $navbar-dark-color: rgba($white, .75);

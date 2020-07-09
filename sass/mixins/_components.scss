@@ -9,10 +9,11 @@
 	background: rgba(0, 0, 0, 0);
 }
 
-@mixin open-list {
+@mixin open-list() {
 	display: flex;
 	flex-direction: column;
 	padding-left: 0;
+	@include list-unstyled();
 	@include my(2);
 
 	li {
@@ -21,8 +22,12 @@
 		padding: $spacer/2 0;
 		background-color: $list-group-bg;
 		border-color: $list-group-border-color;
-		border-bottom: $border-width $list-group-border-color solid;
+		border-bottom: $border-width currentcolor solid;
 		@include mb(0);
+
+		@include media-breakpoint-up(lg) {
+			padding: $spacer 0;
+		}
 
 
 		&:last-child {
@@ -33,9 +38,6 @@
 
 	a {
 		color: inherit;
-		font-family: $font-family-sans-serif;
-		font-weight: $headings-font-weight;
-		line-height: $headings-line-height;
 	}
 }
 
@@ -48,4 +50,16 @@
 	-moz-osx-font-smoothing: grayscale;
 
 
+}
+
+@mixin make-col-flex() {
+
+	flex-basis: 0;
+	flex-grow: 1;
+	min-width: 0;
+	max-width: 100%;
+}
+
+@mixin boxshadow() {
+	box-shadow: $spacer $spacer 0 rgba(#231f20, 0.2);
 }

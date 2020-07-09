@@ -13,15 +13,6 @@
 	font-weight: 400;
 }
 
-.cat-links {
-	a {
-		font-family: $headings-font-family;
-		font-weight: 400;
-		@extend .badge;
-		@include badge-variant($midnight);
-	}
-}
-
 article {
 	position: relative;
 
@@ -31,6 +22,42 @@ article {
 
 }
 
+// Item lists
+.item-list {
+	@include open-list;
+
+	li {
+		h4 {
+			@include my(0);
+		}
+
+		p:last-child {
+			@include mb(0);
+		}
+
+		.meta {
+			font-size: $font-size-small;
+			font-family: $font-family-sans-serif;
+		}
+	}
+}
+
+// Page Sections
+.page-section {
+	@include py(5);
+
+	@include media-breakpoint-up(xl) {
+		@include py(6);
+	}
+
+	.inner {
+		> h2:first-child {
+			@include mt(0);
+		}
+	}
+}
+
+// Share bar
 .share-bar {
 
 	margin-right: - $spacer * 4;
@@ -98,4 +125,129 @@ article {
 			}
 		}
 	}
+}
+
+// CTA Block
+.cta-col {
+	@include make-col-ready();
+
+	display: flex;
+	flex-direction: row;
+	@include make-col(12);
+	@include mb(4);
+
+	@include media-breakpoint-up(lg) {
+		@include make-col-flex();
+		flex-direction: column;
+		@include mb(0);
+	}
+
+	&:last-child {
+		@include mb(0);
+	}
+
+	&-img {
+		width: 33.333%;
+		margin-right: $grid-gutter-width/2;
+		object-fit: cover;
+		height: 100%;
+
+
+		@include media-breakpoint-up(lg) {
+			flex-shrink: 0;
+			width: 100%;
+			margin-right: 0;
+			height: 40%;
+		}
+
+	}
+
+	&-content {
+		display: flex;
+		max-width: 100%;
+		flex-direction: column;
+		@include make-col-flex();
+	}
+
+	.btn {
+		@include mb(0);
+		align-self: flex-end;
+	}
+}
+
+// Petition results
+.petition-results {
+	@include mt(auto);
+	@include mb(3);
+
+	.results-label {
+		font-family: $font-family-sans-serif;
+
+		span {
+			font-weight: $font-weight-bold;
+		}
+	}
+}
+
+// Text grids
+.text-grid {
+	@include make-row(4rem);
+
+	&-item {
+		@include make-col-ready(4rem);
+
+		@include media-breakpoint-up(lg) {
+			@include make-col(6);
+			@include mb(4);
+		}
+	}
+}
+
+// Internal nav
+.internal-nav {
+	display: flex;
+	flex-grow: 1;
+
+	a {
+		color: inherit;
+	}
+
+	&-brand {
+		@include pr(5);
+		@include my(auto);
+		font-size: $font-size-xl;
+		line-height: 1;
+		color: desaturate(lighten($teal, 20), 40);
+	}
+
+	.nav-links {
+		@include list-unstyled();
+		display: flex;
+		flex-wrap: wrap;
+		flex-grow: 1;
+		justify-content: space-around;
+		@include mb(0);
+
+		li {
+			@include make-col-flex();
+
+			a {
+				text-align: center;
+				display: block;
+				@include px(3);
+				@include py(4);
+				border-left: $border-width solid $teal;
+				border-right: $border-width solid $teal;
+				margin-left: -$border-width;
+				font-family: $font-family-sans-serif;
+				@include transition(all 50ms);
+				background-color: desaturate(lighten($teal, 20), 40);
+
+				&:hover {
+					background-color: $teal;
+				}
+			}
+		}
+	}
+
 }

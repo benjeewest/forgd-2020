@@ -41,6 +41,9 @@
 //Calculate navbar height
 $navbar-calc-height: $navbar-padding-y * 2 + $nav-link-height;
 
+/* 
+/ Specific Pages
+*/
 
 //Posts
 body.single {
@@ -228,11 +231,7 @@ body.page {
 
 	.widget {
 		@include make-col-ready();
-		flex-basis: 0;
-		-webkit-box-flex: 1;
-		-ms-flex-positive: 1;
-		flex-grow: 1;
-		max-width: 100%;
+		@include make-col-flex();
 
 	}
 
@@ -349,13 +348,9 @@ body.page {
 // Sidebar
 //////////////////////////////////
 .widget {
-	ul {
-		@extend .list-group;
+	@include open-list();
 
-		li {
-			@extend .list-group-item;
-			border-left: 0;
-			border-right: 0;
-		}
+	li {
+		border-bottom: $border-width solid $midnight;
 	}
 }

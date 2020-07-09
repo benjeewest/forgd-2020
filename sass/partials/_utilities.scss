@@ -1,0 +1,30 @@
+/* Re-usable utility classes */
+
+// Color
+@each $name,
+$color in $colors {
+	.bg-#{$name} {
+		background-color: $color;
+		color: color-yiq($color);
+	}
+
+	.text-#{$name} {
+		color: $color;
+	}
+}
+
+// Buttons
+.btn-plus {
+	@include icon;
+	@include icon-plus;
+}
+
+.btn-mail {
+	@include icon;
+	@include icon-mail;
+}
+
+// Shadows
+.box-shadow {
+	@include boxshadow;
+}

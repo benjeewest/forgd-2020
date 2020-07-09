@@ -1,13 +1,54 @@
-@mixin font-awesome($content) {
-	display: inline-block;
-	font-family: FontAwesome;
-	font-style: normal;
-	font-weight: normal;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+@mixin icon {
+	position: relative;
 
 	&:after {
-		content: '#{$content}';
+		display: inline-block;
+		width: $spacer;
+		height: $spacer;
+		margin-left: $input-padding-x/2;
+
+		svg {
+			fill: currentColor;
+		}
+	}
+}
+
+@mixin icon-plus {
+	&:after {
+		path {
+			fill: $white;
+		}
+
+		content: url('../img/icons/icon-plus.svg');
+	}
+}
+
+@mixin icon-minus {
+	&:after {
+		path {
+			fill: $white;
+		}
+
+		content: url('../img/icons/icon-minus.svg');
+	}
+}
+
+@mixin icon-mail {
+	&:after {
+		path {
+			fill: $white;
+		}
+
+		content: url('../img/icons/icon-mail.svg');
+	}
+}
+
+@mixin icon-arrow-right {
+	&:after {
+		path {
+			fill: $white;
+		}
+
+		content: url('../img/icons/icon-arrow-right.svg');
 	}
 }

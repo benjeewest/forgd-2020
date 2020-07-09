@@ -23,35 +23,41 @@ headroom.init();
 
 
 // Balance text
-balanceText();
+
+
+jQuery(document).ready(function ($) {
+
+	// Balance all headings
+	balanceText($('h1,h2,h3,h4,h5,h6,.balance-text'), {
+		watch: true
+	});
+
+});
 
 //Touch navigation
-jQuery(document).ready(function($){
+jQuery(document).ready(function ($) {
 
-	
-	$('.wrapper').on('dbltap', function(){
-		
-			jQuery(location).attr('href', gestures.destination );
-	
+
+	$('.wrapper').on('dbltap', function () {
+
+		jQuery(location).attr('href', gestures.destination);
+
+	}).on('swipeleft', function () {
+
+		var post_nav = jQuery('link[rel="next"]');
+
+		if (post_nav) {
+			jQuery(location).attr('href', post_nav.attr('href'));
 		}
-	).on('swipeleft', function() {
 
-			var post_nav = jQuery('link[rel="next"]');
-		
-			if ( post_nav ) {
-				jQuery(location).attr('href', post_nav.attr('href'));
-			}		
-	
-		}	
-	).on('swiperight', function() {
+	}).on('swiperight', function () {
 
-			var post_nav = jQuery('link[rel="prev"]');
-		
-			if ( post_nav ) {
-				jQuery(location).attr('href', post_nav.attr('href'));
-			}		
-	
+		var post_nav = jQuery('link[rel="prev"]');
+
+		if (post_nav) {
+			jQuery(location).attr('href', post_nav.attr('href'));
 		}
-	);
+
+	});
 
 });

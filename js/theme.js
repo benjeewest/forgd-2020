@@ -7718,7 +7718,12 @@ var headroom = new Headroom(HeadroomElement, HeadroomOptions); // initialise
 
 headroom.init(); // Balance text
 
-balanceText(); //Touch navigation
+jQuery(document).ready(function ($) {
+  // Balance all headings
+  balanceText($('h1,h2,h3,h4,h5,h6,.balance-text'), {
+    watch: true
+  });
+}); //Touch navigation
 
 jQuery(document).ready(function ($) {
   $('.wrapper').on('dbltap', function () {
