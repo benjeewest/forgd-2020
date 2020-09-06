@@ -54,7 +54,7 @@ get_header();
 		<div class="inner" id="description">
 
 			<h2>Introduction</h2>
-			<p class="balance-text">We believe that a fairer, more prosperous and more equal society is within our reach. But getting there means a politics of the common ground, based on celebrating the things we share in common, and the responsibilities we owe to one other.</p>
+			<p class="balance-text">For a few thrilling weeks in We believe that a fairer, more prosperous and more equal society is within our reach. But getting there means a politics of the common ground, based on celebrating the things we share in common, and the responsibilities we owe to one other.</p>
 			<p class="balance-text">
 
 				We are building a movement for a Labour Party that puts country before itself. One prepared not only listen, but to reflect and speak the priorities of a country it genuinely loves—as it once did.</p>
@@ -65,17 +65,23 @@ get_header();
 	</section>
 	<section class="wrapper bg-dark text-light">
 		<div class="inner">
-			<div class="internal-nav">
-				<div class="internal-nav-brand" href="#">Find us on</div>
-				<ul class="nav-links">
-					<li class="nav-item"><a href="#">Facebook</a></li>
-					<li class="nav-item"><a href="#">Podcast</a></li>
-					<li class="nav-item"><a href="#">Digest</a></li>
-					<li class="nav-item"><a href="#">Newsletter</a></li>
-					<li class="nav-item"><a href="#">Events</a></li>
-				</ul>
+			<nav class="navbar navbar-expand-md navbar-dark px-0">
+				<div class="navbar-brand" href="#">Find us on</div>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<div class="navbar-nav justify-content-around w-100">
 
-			</div>
+						<a class="nav-item nav-link" href="#">Facebook</a>
+						<a class="nav-item nav-link" href="#">Newsletter</a>
+						<a class="nav-item nav-link" href="#">Podcast</a>
+						<a class="nav-item nav-link" href="#">Events</a>
+
+
+					</div>
+				</div>
+			</nav>
 		</div>
 	</section>
 	<section class="page-section">
@@ -89,7 +95,7 @@ get_header();
 						<h3>Abolish Citizenship Fees</h3>
 						<div class="petition-results">
 							<div class="progress">
-								<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+								<div class="progress-bar bg-dark" role="progressbar" style="width: 85%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 
 							</div>
 							<div class="results-label"><span>100</span> of 500 signatures</div>
@@ -104,7 +110,7 @@ get_header();
 						<h3>For an English Parliament</h3>
 						<div class="petition-results">
 							<div class="progress">
-								<div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+								<div class="progress-bar bg-dark" role="progressbar" style="width: 15%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 
 							</div>
 							<div class="results-label"><span>100</span> of 500 signatures</div>
@@ -121,7 +127,7 @@ get_header();
 						<h3>Stand up to Huiwei</h3>
 						<div class="petition-results">
 							<div class="progress">
-								<div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+								<div class="progress-bar bg-dark" role="progressbar" style="width: 65%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 							</div>
 							<div class="results-label"><span>100</span>of 500 signatures</div>
 						</div>
